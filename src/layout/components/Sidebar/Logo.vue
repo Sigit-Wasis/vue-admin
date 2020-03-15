@@ -1,11 +1,9 @@
 <template>
   <div class="sidebar-logo-container" :class="{'collapse':collapse}">
-    <transition name="sidebarLogoFade">
-      <router-link v-if="!collapse" key="expand" class="sidebar-logo-link" to="/">
-        <img v-if="logo" :src="logo" class="sidebar-logo">
-        <h1 class="sidebar-title">{{ title }} </h1>
-      </router-link>
-    </transition>
+    <router-link v-if="!collapse" key="expand" class="sidebar-logo-link" to="/">
+      <img v-if="logo" :src="logo" class="sidebar-logo">
+      <h1 class="sidebar-title">{{ title }} </h1>
+    </router-link>
   </div>
 </template>
 
@@ -28,15 +26,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.sidebarLogoFade-enter-active {
-  transition: opacity 1.5s;
-}
-
-.sidebarLogoFade-enter,
-.sidebarLogoFade-leave-to {
-  opacity: 0;
-}
-
 .sidebar-logo-container {
   position: absolute;
   height: 50px;

@@ -35,10 +35,6 @@ export default {
   cursor: pointer;
   transition: background .3s;
   -webkit-tap-highlight-color:transparent;
-
-  &:hover {
-    background: rgba(0, 0, 0, .025)
-  }
 }
 .sidenav .sidenav-toggler {
   padding: 19px;
@@ -61,6 +57,6 @@ export default {
   position: relative;
   display: block;
   height: 2px;
-  background-color: #172b4d;
+  background-color: #fff;
 }
 </style>

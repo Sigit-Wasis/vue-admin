@@ -10,7 +10,7 @@
   .sidebar-container {
     transition: width 0.28s;
     width: $sideBarWidth !important;
-    background-color: $menuBg;
+    background-color: #2196F3;
     height: 100%;
     position: fixed;
     font-size: 0px;
@@ -83,6 +83,10 @@
     }
   }
 
+  .el-submenu__icon-arrow {
+    color: $menuText;
+  }
+
   .hideSidebar {
     .sidebar-container {
       width: 54px !important;
@@ -134,6 +138,10 @@
         }
       }
     }
+  }
+
+  .el-menu .el-menu-item.is-active {
+    border-left: 2px solid;
   }
 
   .el-menu--collapse .el-menu .el-submenu {

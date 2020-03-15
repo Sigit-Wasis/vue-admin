@@ -1,7 +1,7 @@
 <template>
   <div :class="{'has-logo':showLogo}">
     <div class="sidenav-header">
-      <hamburger :is-active="sidebar.opened" @toggleClick="toggleSideBar" />
+      <hamburger position="right" :is-active="sidebar.opened" @toggleClick="toggleSideBar" />
       <logo v-if="showLogo" v-show="!isCollapse" :collapse="isCollapse" />
       <div style="clear:both" />
     </div>

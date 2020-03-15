@@ -1,6 +1,11 @@
 <template>
   <div class="navbar">
-    <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
+    <hamburger v-show="mobile" :is-active="sidebar.opened" :dark="true" position="left" @toggleClick="toggleSideBar" />
+    <breadcrumb
+      id="breadcrumb-container"
+      class="breadcrumb-container"
+      :style="{paddingLeft: !mobile ? '30px' : ''}"
+    />
 
     <div class="right-menu">
       <template v-if="device!=='mobile'">
@@ -44,7 +49,8 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapState } from 'vuex'
+import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
 import ErrorLog from '@/components/ErrorLog'
 import Screenfull from '@/components/Screenfull'
@@ -53,6 +59,7 @@ import Search from '@/components/HeaderSearch'
 
 export default {
   components: {
+    Hamburger,
     Breadcrumb,
     ErrorLog,
     Screenfull,
@@ -60,6 +67,12 @@ export default {
     Search
   },
   computed: {
+    ...mapState({
+      device: state => state.app.device
+    }),
+    mobile() {
+      return this.device === 'mobile'
+    },
     ...mapGetters([
       'sidebar',
       'avatar',
@@ -70,6 +83,9 @@ export default {
     async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+    },
+    toggleSideBar() {
+      this.$store.dispatch('app/toggleSideBar')
     }
   }
 }

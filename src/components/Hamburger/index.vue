@@ -1,5 +1,5 @@
 <template>
-  <div id="hamburger-container" class="hamburger-container">
+  <div id="hamburger-container" :class="[{dark: dark}, position]" class="hamburger-container">
     <div class="sidenav">
       <div :class="{'active':isActive}" class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" @click="toggleClick">
         <div class="sidenav-toggler-inner">
@@ -19,6 +19,14 @@ export default {
     isActive: {
       type: Boolean,
       default: false
+    },
+    dark: {
+      type: Boolean,
+      default: false
+    },
+    position: {
+      type: String,
+      default: ''
     }
   },
   methods: {
@@ -31,10 +39,13 @@ export default {
 
 <style lang="scss" scoped>
 .hamburger-container {
-  float: right;
+  float: left;
   cursor: pointer;
   transition: background .3s;
   -webkit-tap-highlight-color:transparent;
+}
+.hamburger-container.right {
+  float: right;
 }
 .sidenav .sidenav-toggler {
   padding: 19px;
@@ -58,5 +69,8 @@ export default {
   display: block;
   height: 2px;
   background-color: #fff;
+}
+.hamburger-container.dark .sidenav-toggler-line {
+  background-color: #000;
 }
 </style>

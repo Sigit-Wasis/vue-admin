@@ -30,9 +30,9 @@
 
 ## 概要
 
-[vue-element-admin](https://panjiachen.github.io/vue-element-admin) は管理画面のフロントエンドのインタフェースで、[vue](https://github.com/vuejs/vue) と [element-ui](https://github.com/ElemeFE/element)を使っています。i18nの多言語対応、可変ルート、権限、典型的なビジネスアプリテンプレートであり、豊富なコンポーネントを提供しています。素早くビジネス用の管理画面の現型を構築に役立ちます。
+[vue-element-admin](https://vue-admin-6c20c.web.app) は管理画面のフロントエンドのインタフェースで、[vue](https://github.com/vuejs/vue) と [element-ui](https://github.com/ElemeFE/element)を使っています。i18nの多言語対応、可変ルート、権限、典型的なビジネスアプリテンプレートであり、豊富なコンポーネントを提供しています。素早くビジネス用の管理画面の現型を構築に役立ちます。
 
-- [デモページ](https://panjiachen.github.io/vue-element-admin)
+- [デモページ](https://vue-admin-6c20c.web.app)
 
 - [ドキュメント](https://panjiachen.github.io/vue-element-admin-site/)
 
@@ -186,7 +186,7 @@ npm run lint -- --fix
 
 ## Online Demo
 
-[Preview](https://panjiachen.github.io/vue-element-admin)
+[Preview](https://vue-admin-6c20c.web.app)
 
 ## Donate
 
